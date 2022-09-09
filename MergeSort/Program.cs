@@ -12,28 +12,11 @@
                 arraySource[i] = random.Next(100);
             }
 
-            Console.WriteLine("Before Sort");
-            Console.Write("[");
-            for (int i = 0; i < arraySource.Length; i++)
-            {
-                Console.Write($"{arraySource[i]}");
-                if (i < arraySource.Length - 1)
-                    Console.Write("\t");
-            }
-            Console.Write("]");
-            Console.WriteLine();
+            PrintResult(arraySource, "Before Sort");
 
             int[] result = MergeSort(arraySource);
 
-            Console.WriteLine("After Sort");
-            Console.Write("[");
-            for (int i = 0; i < result.Length; i++)
-            {
-                Console.Write($"{result[i]}");
-                if (i < arraySource.Length - 1)
-                    Console.Write("\t");
-            }
-            Console.Write("]");
+            PrintResult(result, "After Sort");
         }
 
         static int[] MergeSort(int[] array)
@@ -92,6 +75,20 @@
             }
 
             return result;
+        }
+
+        static void PrintResult(int[] array, string title)
+        {
+            Console.WriteLine($"{title}");
+            Console.Write("[");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{array[i]}");
+                if (i < array.Length - 1)
+                    Console.Write("\t");
+            }
+            Console.Write("]");
+            Console.WriteLine();
         }
     }
 }
