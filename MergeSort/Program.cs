@@ -12,6 +12,7 @@
                 arraySource[i] = random.Next(100);
             }
 
+            Console.WriteLine("Before Sort");
             Console.Write("[");
             for (int i = 0; i < arraySource.Length; i++)
             {
@@ -21,8 +22,10 @@
             }
             Console.Write("]");
             Console.WriteLine();
+
             int[] result = MergeSort(arraySource);
 
+            Console.WriteLine("After Sort");
             Console.Write("[");
             for (int i = 0; i < result.Length; i++)
             {
